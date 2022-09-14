@@ -18,9 +18,15 @@ public class Main {
         book3.addChapter("Dobby’s Warning");
         book3.addChapter("The Burrow");
 
+        Book book4 = new Book("Harry Potter and the Chamber of Secrets", "J. K. Rowling", 1998);
+        book4.addChapter("The Worst Birthday");
+        book4.addChapter("Dobby’s Warning");
+        book4.addChapter("The Burrow");
+
         bookShelf.putBookAtTheEndOfShelf(book2);
         bookShelf.putBookAtTheEndOfShelf(book1);
         bookShelf.putBookAfterBookWithTitle(book3, book1.getTitle());
+        System.out.println(bookShelf.checkIfSameBookAlreadyOnTheShelf(book4));
 
         Library publicLibrary = new Library("Public library");
         publicLibrary.addBookToLibrary(book1);

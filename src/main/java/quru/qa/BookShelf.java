@@ -53,4 +53,8 @@ public class BookShelf {
         }
         return index;
     }
+
+    public boolean checkIfSameBookAlreadyOnTheShelf(Book book) {
+        return books.contains(book);
+    }
 }
