@@ -22,16 +22,15 @@ public class Main {
         bookShelf.putBookAtTheEndOfShelf(book1);
         bookShelf.putBookAfterBookWithTitle(book3, book1.getTitle());
 
-        Library publicLibrary = new Library();
+        Library publicLibrary = new Library("Public library");
         publicLibrary.addBookToLibrary(book1);
         publicLibrary.addBookToLibrary(book2);
         publicLibrary.addBookToLibrary(book3);
-        publicLibrary.printAllBooksInfo();
 
         publicLibrary.getBookWithTitleFromLibraryForReader("Harry Potter and the Chamber of Secrets", "Marina Remneva");
         publicLibrary.returnBookWithTitleToLibrary("Harry Potter and the Chamber of Secrets");
         publicLibrary.getBookWithTitleFromLibraryForReader("Harry Potter and the Chamber of Secrets", "Sasha Tonks");
-        publicLibrary.printReadersListForBookByIndex(2);
-        publicLibrary.printReadersListForBookByTitle("Harry Potter and the Chamber of Secrets");
+        publicLibrary.printAllBooksInfo();
+
     }
 }

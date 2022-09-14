@@ -12,9 +12,7 @@ public class Book {
     private List<String> chapterTitles = new ArrayList<>();
 
     public Book(String title, String author, int publicationYear, List<String> chapterTitles) {
-        this.title = title;
-        this.author = author;
-        this.publicationYear = publicationYear;
+        this(title, author, publicationYear);
         this.chapterTitles.addAll(chapterTitles);
     }
 

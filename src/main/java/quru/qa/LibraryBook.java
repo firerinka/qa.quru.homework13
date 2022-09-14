@@ -9,16 +9,12 @@ public class LibraryBook extends Book {
     private Set<String> readersList = new LinkedHashSet<>();
 
     public LibraryBook(String title, String author, int publicationYear, List<String> chapterTitles, Set<String> readersList) {
-        super(title, author, publicationYear, chapterTitles);
+        this(title, author, publicationYear, chapterTitles);
         this.readersList.addAll(readersList);
     }
 
     public LibraryBook(String title, String author, int publicationYear, List<String> chapterTitles) {
         super(title, author, publicationYear, chapterTitles);
-    }
-
-    public LibraryBook(String title, String author, int publicationYear) {
-        super(title, author, publicationYear);
     }
 
     public void setTaken(boolean taken) {

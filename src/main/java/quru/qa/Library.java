@@ -4,8 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Library {
+    String name;
     HashMap<Integer, LibraryBook> booksIndexes = new HashMap<>();
     private int booksNumber = 0;
+
+    public Library(String name) {
+        this.name = name;
+    }
 
     public void addBookToLibrary(LibraryBook book) {
         booksIndexes.put(booksNumber, book);
@@ -17,33 +22,32 @@ public class Library {
         addBookToLibrary(lBook);
     }
 
-    public int getBookWithTitleFromLibraryForReader(String title, String readerName) {
-        int index = -1;
-
+    public void getBookWithTitleFromLibraryForReader(String title, String readerName) {
         for (Map.Entry<Integer, LibraryBook> bookEntry : booksIndexes.entrySet()) {
             LibraryBook book = bookEntry.getValue();
             if (book.getTitle().equals(title)) {
                 if (book.isTaken()) {
                     break;
                 }
-
-                LibraryBook newBook = new LibraryBook(book.getTitle(), book.getAuthor(), book.getPublicationYear(), book.getChapterTitles(), book.getReadersList());
+                LibraryBook newBook =
+                        new LibraryBook(book.getTitle(), book.getAuthor(), book.getPublicationYear(), book.getChapterTitles(), book.getReadersList());
                 newBook.setTaken(true);
                 newBook.addReader(readerName);
+
                 booksIndexes.put(bookEntry.getKey(), newBook);
-                index = bookEntry.getKey();
                 break;
             }
         }
-        return index;
     }
 
     public void returnBookWithTitleToLibrary(String title) {
         for (Map.Entry<Integer, LibraryBook> bookEntry : booksIndexes.entrySet()) {
             LibraryBook book = bookEntry.getValue();
             if (book.getTitle().equals(title)) {
-                LibraryBook newBook = new LibraryBook(book.getTitle(), book.getAuthor(), book.getPublicationYear(), book.getChapterTitles(), book.getReadersList());
+                LibraryBook newBook =
+                        new LibraryBook(book.getTitle(), book.getAuthor(), book.getPublicationYear(), book.getChapterTitles(), book.getReadersList());
                 newBook.setTaken(false);
+
                 booksIndexes.put(bookEntry.getKey(), newBook);
                 break;
             }
@@ -51,6 +55,7 @@ public class Library {
     }
 
     public void printAllBooksInfo() {
+        System.out.println("List of books in " + this.name);
         for (Map.Entry<Integer, LibraryBook> bookEntry : booksIndexes.entrySet()) {
             System.out.println("Book index: " + bookEntry.getKey());
             bookEntry.getValue().printBookInfo();

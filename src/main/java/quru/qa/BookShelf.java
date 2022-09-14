@@ -43,6 +43,7 @@ public class BookShelf {
         int index = -1;
         int i = 0;
         boolean isFound = false;
+
         while (i < books.size() && !isFound) {
             if (books.get(i).getAuthor().equals(author)) {
                 index = i;
