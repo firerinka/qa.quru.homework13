@@ -1,12 +1,12 @@
 package quru.qa;
 
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class LibraryBook extends Book {
     private boolean isTaken = false;
-    private Set<String> readersList = new LinkedHashSet<>();
+    private Set<String> readersList = new HashSet<>();
 
     public LibraryBook(String title, String author, int publicationYear, List<String> chapterTitles, Set<String> readersList) {
         this(title, author, publicationYear, chapterTitles);

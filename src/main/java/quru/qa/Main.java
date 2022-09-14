@@ -26,7 +26,6 @@ public class Main {
         bookShelf.putBookAtTheEndOfShelf(book2);
         bookShelf.putBookAtTheEndOfShelf(book1);
         bookShelf.putBookAfterBookWithTitle(book3, book1.getTitle());
-        System.out.println(bookShelf.checkIfSameBookAlreadyOnTheShelf(book4));
 
         Library publicLibrary = new Library("Public library");
         publicLibrary.addBookToLibrary(book1);
@@ -36,7 +35,8 @@ public class Main {
         publicLibrary.getBookWithTitleFromLibraryForReader("Harry Potter and the Chamber of Secrets", "Marina Remneva");
         publicLibrary.returnBookWithTitleToLibrary("Harry Potter and the Chamber of Secrets");
         publicLibrary.getBookWithTitleFromLibraryForReader("Harry Potter and the Chamber of Secrets", "Sasha Tonks");
-        publicLibrary.printAllBooksInfo();
 
+        publicLibrary.removeBookByTitle("Never let me go");
+        publicLibrary.printAllBooksInfo();
     }
 }

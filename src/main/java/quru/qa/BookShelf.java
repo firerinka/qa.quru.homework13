@@ -27,6 +27,19 @@ public class BookShelf {
         }
     }
 
+    public void removeBookByTitle(String title) {
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getTitle().equals(title)) {
+                books.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void removeBook(Book book) {
+        books.remove(book);
+    }
+
     public void removeAllAuthorsBooks(String author) {
         int index = findNextBookIndexWrittenByAuthor(author);
         int numberOfRemovedBooks = 0;
