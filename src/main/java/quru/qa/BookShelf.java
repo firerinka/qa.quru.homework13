@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class BookShelf {
-    List<Book> books = new LinkedList<>();
+    private List<Book> books = new LinkedList<>();
 
     public void printAllBooksInfo() {
         for (Book book : books) {

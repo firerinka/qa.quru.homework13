@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Library {
-    String name;
-    HashMap<Integer, LibraryBook> booksIndexes = new HashMap<>();
+    private String name;
+    private HashMap<Integer, LibraryBook> booksIndexes = new HashMap<>();
     private int booksNumber = 0;
 
     public Library(String name) {
